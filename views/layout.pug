@@ -1,0 +1,22 @@
+doctype html 
+html 
+  head 
+    meta(charset="utf-8")
+    title #{title} | Test Website
+    link(rel="stylesheet", type="text/css",href="/css/styles.css")
+    block scripts
+      script(src="/js/script.js")
+  body 
+    header#header 
+      .header-content
+        h2#sitename 
+          a(href="/") Test site 
+        nav(id="main-menu", aria-label="Main navigation")
+          ul 
+            each link in menu 
+              li 
+                a(href=link.path) #{link.name}
+    main#main 
+      block main-content 
+    footer#footer 
+      p &copy; HTTP5211, 2023.
